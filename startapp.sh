@@ -1,3 +1,3 @@
 #!/bin/sh
 export HOME=/config
-exec /usr/bin/buckets --no-sandbox
+exec /usr/bin/bucketsbeta --no-sandbox --use-gl=swiftshader

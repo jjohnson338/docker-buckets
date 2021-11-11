@@ -1,8 +1,6 @@
 # Pull base image.
 FROM jlesage/baseimage-gui:debian-10
 
-
-# Install xterm.
 RUN apt update
 RUN apt install -y \
     wget \
@@ -16,17 +14,13 @@ RUN apt install -y \
     libsecret-1-0 \
     libasound2
 
-RUN mkdir /opt/buckets
-RUN wget --no-check-certificate https://github.com/buckets/desktop-beta/releases/download/v0.63.1/BucketsBeta-0.63.1.tar.gz
-
-RUN tar -xzf BucketsBeta-0.63.1.tar.gz -C /opt/buckets
-RUN chmod -R 777 /opt/buckets
-RUN ls /opt/buckets
-RUN chmod a+x /opt/buckets/BucketsBeta-0.63.1/bucketsbeta
-RUN ln -sf /opt/buckets/BucketsBeta-0.63.1/bucketsbeta /usr/bin/buckets
+RUN wget https://github.com/buckets/desktop-beta/releases/download/v0.63.2/BucketsBeta_0.63.2_amd64.deb
+RUN dpkg -i BucketsBeta_0.63.2_amd64.deb
 
 # Copy the start script.
 COPY startapp.sh /startapp.sh
 
 # Set the name of the application.
 ENV APP_NAME="Buckets Beta"
+ENV DISPLAY_WIDTH=1700
+ENV DISPLAY_HEIGHT=1050
