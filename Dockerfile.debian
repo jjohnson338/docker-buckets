@@ -106,7 +106,7 @@ RUN \
         xvfb \
         x11-utils \
         # Openbox window manager
-        openbox \ 
+        openbox \
         # For ifconfig
         net-tools && \
     # Remove some unneeded stuff.

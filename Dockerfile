@@ -12,7 +12,8 @@ RUN apt install -y \
     libatspi2.0-0 \
     libappindicator3-1 \
     libsecret-1-0 \
-    libasound2
+    libasound2 \
+    fonts-noto-color-emoji
 
 RUN wget https://github.com/buckets/desktop-beta/releases/download/v0.63.2/BucketsBeta_0.63.2_amd64.deb
 RUN dpkg -i BucketsBeta_0.63.2_amd64.deb
